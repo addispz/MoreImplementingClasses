@@ -90,7 +90,25 @@ def main():
 #
 ########################################################################
 
+class Baby(object):
+    def __init__(self, name):
+        self.baby_name = name
 
+        print('Hello baby', self.baby_name, '!')
+        self.call = 0
+
+    def feed_baby(self):
+        print('Thank you for feeding baby', self.baby_name)
+        self.call = 0
+
+    def hour_passes(self):
+        self.call = self.call + 1
+        if self.call == 1:
+            print('Baby', self.baby_name, 'is sleeping.')
+        if self.call == 2:
+            print('Baby', self.baby_name, 'is awake.  Time for food.')
+        if self.call >= 3:
+            print('Baby', self.baby_name, 'is CRYING uncontrollably!  Feed the Baby!')
 
 
 
