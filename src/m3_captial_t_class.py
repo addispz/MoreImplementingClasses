@@ -14,7 +14,7 @@ def main():
     #   Uncomment only 1 test at a time as you develop your code.
     # --------------------------------------------------------------
 
-    # run_test_simple_t()
+    run_test_simple_t()
     # run_test_set_colors()
     # run_test_move_by()
     # run_test_clone()
@@ -140,6 +140,22 @@ class CapitalT(object):
         #   Implement this method
         #   Note: you will need to also implement attach_to before testing
         # --------------------------------------------------------------
+
+        self.intersection_center = intersection_center
+        self.width = width
+        self.height = height
+        self.letter_thickness = letter_thickness
+
+        half = width/2
+        thickness = letter_thickness/2
+
+        self.corner_v1 = rg.Point(intersection_center.x - half, intersection_center.y - thickness)
+        self.corner_v2 = rg.Point(intersection_center.x + half, intersection_center.y + thickness)
+        self.corner_h1 = rg.Point(intersection_center.x - thickness, intersection_center.y - thickness)
+        self.corner_h2 = rg.Point(intersection_center.x + thickness, intersection_center.y + height - thickness)
+
+        self.v_rect = rg.Rectangle(self.corner_v1, self.corner_v2)
+        self.h_rect = rg.Rectangle(self.corner_h1, self.corner_h2)
 
     def attach_to(self, window):
         """
